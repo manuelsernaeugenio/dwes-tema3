@@ -27,7 +27,7 @@ include './libs/file.php';
 
                 $txtDeleteBtn = getCadena('files.table.removebtn');
                 $txtSeeImage = getCadena('files.table.seeordownload');
-
+                $noFiles = getCadena('files.table.noFiles');
                 // obtenemos los ficheros pdf para luego mostrarlos en la tabla.
                 foreach (getFiles('pdf') as $fichero) {
                     if ($fichero != null) {
@@ -68,7 +68,7 @@ include './libs/file.php';
                         </tbody>
                     </table>
                 <?php } else {
-                    echo "No hay ficheros<br>";
+                    echo "$noFiles<br>";
                 } ?>
                 <br>
                 <h2><?= getCadena('files.yourimages') ?></h2>
@@ -76,7 +76,7 @@ include './libs/file.php';
                     <div class="row">
                         <?php
                         $ficheros = [];
-
+                        $noImages = getCadena('files.images.noImages');
                         // Obtenemos los arrays que contienen cada fichero
                         $jpg = getFiles('jpg') !== null ? getFiles('jpg') : null;
                         $jpeg = getFiles('jpeg') !== null ? getFiles('jpeg') : null;
@@ -86,7 +86,7 @@ include './libs/file.php';
                         // Hacemos un merge e unimos los ficheros en un solo array
                         $ficheros = array_merge($jpg, $jpeg, $png, $gif);
                         if (count($ficheros) == 0) {
-                            echo "No hay imágenes.";
+                            echo "$noImages";
                         } else {
                             foreach ($ficheros as $fichero) {
                                 $src = isset($fichero) ? $fichero : ""; // obtengo la ruta

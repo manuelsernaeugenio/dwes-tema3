@@ -21,7 +21,7 @@ include './controllers/language.php';
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold"><?= getCadena('home.welcome');  ?></h1>
                 <p class="col-md-8 fs-4"><?= getCadena('home.description');  ?></p>
-                <a class="btn btn-primary btn-lg" href="subir.php"><?= getCadena('home.main.button');  ?></a>
+                <a class="btn btn-primary btn-lg" href="subir.php?idioma=<?= $idioma ?>"><?= getCadena('home.main.button');  ?></a>
             </div>
         </div>
 

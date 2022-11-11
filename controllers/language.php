@@ -78,6 +78,14 @@ $cadenas = [
     'files.grid.uploadtime' => [
         'es' => 'Fecha de subida',
         'en' => 'Upload time'
+    ],
+    'files.images.noImages' => [
+        'es' => 'No hay imágenes.',
+        'en' => 'There are no images.'
+    ],
+    'files.table.noFiles' => [
+        'es' => 'No hay ficheros.',
+        'en' => 'There are no files.'
     ]
 ];
 
