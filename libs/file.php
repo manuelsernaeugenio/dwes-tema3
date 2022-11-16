@@ -1,5 +1,9 @@
 <?php
 
+/*
+* Función que devuelve un array de ficheros según la extensión que le pasemos.
+*
+*/
 function getFiles(string $type): array
 {
 

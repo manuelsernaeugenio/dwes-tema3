@@ -10,6 +10,10 @@ $errores = [
     'fichero' => null
 ];
 
+
+/*
+* Si hay post, revisa que los datos que le hemos pasado tanto nombre como fichero, estén correctos.
+*/
 if ($_POST) {
     if (isset($_POST['nombre_fichero']) && array_key_exists('nombre_fichero', $_POST)) {
         $nombreFichero = isset($_POST['nombre_fichero']) ? htmlspecialchars(trim($_POST['nombre_fichero'])) : null;
@@ -35,6 +39,7 @@ if ($_POST) {
 
         $rutaFicheroDestino = './ficheros/' . $nombreFichero . "." . $extension;
 
+        // Comprobaciones básicas de subida para posteriormente subir o mostrar los errores.
         if (in_array($mime_fichero, $permitido) && !file_exists($rutaFicheroDestino) && $nombreFichero != null) {
             $seHaSubido = move_uploaded_file($fichero, $rutaFicheroDestino);
 
